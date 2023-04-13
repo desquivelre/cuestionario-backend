@@ -1,0 +1,13 @@
+server:
+  port: 8080
+  #address: 192.168.73.215
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_springboot_backend
+    username: postgres
+    password: deg159753
