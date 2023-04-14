@@ -1,6 +1,7 @@
 package upc.project.cuestionario.entities;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import jakarta.persistence.*;
 
@@ -9,25 +10,36 @@ import jakarta.persistence.*;
 public class RespuestaMIL implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long CRespuestaMIL;
+    private Long crespuestamil;
 
-    private String NRespuestaMIL;
+    private String nrespuestamil;
 
-    public Long getCRespuestaMIL() {
-        return CRespuestaMIL;
+    @OneToMany(mappedBy = "respuestamil")
+    private Set<DetalleCuestionario> detallecuestionarios;
+
+    public Long getCrespuestamil() {
+        return crespuestamil;
     }
 
-    public void setCRespuestaMIL(Long cRespuestaMIL) {
-        CRespuestaMIL = cRespuestaMIL;
+    public void setCrespuestamil(Long crespuestamil) {
+        this.crespuestamil = crespuestamil;
     }
 
-    public String getNRespuestaMIL() {
-        return NRespuestaMIL;
+    public String getNrespuestamil() {
+        return nrespuestamil;
     }
 
-    public void setNRespuestaMIL(String nRespuestaMIL) {
-        NRespuestaMIL = nRespuestaMIL;
+    public void setNrespuestamil(String nrespuestamil) {
+        this.nrespuestamil = nrespuestamil;
     }
 
+    public Set<DetalleCuestionario> getDetallecuestionarios() {
+        return detallecuestionarios;
+    }
+
+    public void setDetallecuestionarios(Set<DetalleCuestionario> detallecuestionarios) {
+        this.detallecuestionarios = detallecuestionarios;
+    }
+    
     
 }

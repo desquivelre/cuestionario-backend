@@ -1,6 +1,7 @@
 package upc.project.cuestionario.entities;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import jakarta.persistence.*;
 
@@ -9,25 +10,34 @@ import jakarta.persistence.*;
 public class Categoria implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long CCategoria;
+    private Long ccategoria;
 
-    private String NCategoria;
+    private String ncategoria;
 
-    public Long getCCategoria() {
-        return CCategoria;
+    @OneToMany(mappedBy = "categoria")
+    private Set<Subcategoria> subcategorias;
+
+    public Long getCcategoria() {
+        return ccategoria;
     }
 
-    public void setCCategoria(Long cCategoria) {
-        CCategoria = cCategoria;
+    public void setCcategoria(Long ccategoria) {
+        this.ccategoria = ccategoria;
     }
 
-    public String getNCategoria() {
-        return NCategoria;
+    public String getNcategoria() {
+        return ncategoria;
     }
 
-    public void setNCategoria(String nCategoria) {
-        NCategoria = nCategoria;
+    public void setNcategoria(String ncategoria) {
+        this.ncategoria = ncategoria;
     }
 
-    
+    public Set<Subcategoria> getSubcategorias() {
+        return subcategorias;
+    }
+
+    public void setSubcategorias(Set<Subcategoria> subcategorias) {
+        this.subcategorias = subcategorias;
+    }
 }
