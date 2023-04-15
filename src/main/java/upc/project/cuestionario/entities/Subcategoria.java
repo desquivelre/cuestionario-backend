@@ -12,14 +12,17 @@ public class Subcategoria implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long csubcategoria;
 
+    @ManyToOne
+    @JoinColumn(name="ccategoria")
+    private Categoria categoria;
+
+    private String siglasubcategoria;
+
+    @Column(length = 400)
     private String nsubcategoria;
 
     @OneToMany(mappedBy = "subcategoria")
     private Set<Pregunta> preguntas;
-
-    @ManyToOne
-    @JoinColumn(name="ccategoria")
-    private Categoria categoria;
 
     public Long getCsubcategoria() {
         return csubcategoria;
@@ -37,6 +40,14 @@ public class Subcategoria implements Serializable{
         this.nsubcategoria = nsubcategoria;
     }
 
+    public String getSiglasubcategoria() {
+        return siglasubcategoria;
+    }
+
+    public void setSiglasubcategoria(String siglasubcategoria) {
+        this.siglasubcategoria = siglasubcategoria;
+    }
+
     public Set<Pregunta> getPreguntas() {
         return preguntas;
     }
@@ -52,5 +63,7 @@ public class Subcategoria implements Serializable{
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
+   
 
 }

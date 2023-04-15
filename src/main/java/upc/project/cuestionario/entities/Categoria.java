@@ -14,8 +14,14 @@ public class Categoria implements Serializable{
 
     private String ncategoria;
 
+    private String siglacategoria;
+
     @OneToMany(mappedBy = "categoria")
     private Set<Subcategoria> subcategorias;
+
+    @ManyToOne
+    @JoinColumn(name = "cfuncion")
+    private Funcion funcion;
 
     public Long getCcategoria() {
         return ccategoria;
@@ -33,6 +39,14 @@ public class Categoria implements Serializable{
         this.ncategoria = ncategoria;
     }
 
+    public String getSiglacategoria() {
+        return siglacategoria;
+    }
+
+    public void setSiglacategoria(String siglacategoria) {
+        this.siglacategoria = siglacategoria;
+    }
+
     public Set<Subcategoria> getSubcategorias() {
         return subcategorias;
     }
@@ -40,4 +54,13 @@ public class Categoria implements Serializable{
     public void setSubcategorias(Set<Subcategoria> subcategorias) {
         this.subcategorias = subcategorias;
     }
+
+    public Funcion getFuncion() {
+        return funcion;
+    }
+
+    public void setFuncion(Funcion funcion) {
+        this.funcion = funcion;
+    }
+    
 }

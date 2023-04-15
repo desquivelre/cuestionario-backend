@@ -12,7 +12,10 @@ public class Pregunta implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cpregunta;
 
+    @Column(length = 400)
     private String npregunta;
+
+    private String siglapregunta;
 
     @OneToMany(mappedBy = "pregunta")
     private Set<DetalleCuestionario> detallecuestionarios;
@@ -20,6 +23,7 @@ public class Pregunta implements Serializable{
     @ManyToOne
     @JoinColumn(name = "csubcategoria")
     private Subcategoria subcategoria;
+
 
     public Long getCpregunta() {
         return cpregunta;
@@ -53,6 +57,11 @@ public class Pregunta implements Serializable{
         this.subcategoria = subcategoria;
     }
 
-   
-    
+    public String getSiglapregunta() {
+        return siglapregunta;
+    }
+
+    public void setSiglapregunta(String siglapregunta) {
+        this.siglapregunta = siglapregunta;
+    }
 }
