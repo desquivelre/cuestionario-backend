@@ -24,6 +24,14 @@ public class Pregunta implements Serializable{
     @JoinColumn(name = "csubcategoria")
     private Subcategoria subcategoria;
 
+    public Pregunta(Long cpregunta, String npregunta, String siglapregunta,
+            Set<DetalleCuestionario> detallecuestionarios, Subcategoria subcategoria) {
+        this.cpregunta = cpregunta;
+        this.npregunta = npregunta;
+        this.siglapregunta = siglapregunta;
+        this.detallecuestionarios = detallecuestionarios;
+        this.subcategoria = subcategoria;
+    }
 
     public Long getCpregunta() {
         return cpregunta;

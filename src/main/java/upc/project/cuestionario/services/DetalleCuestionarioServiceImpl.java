@@ -1,5 +1,6 @@
 package upc.project.cuestionario.services;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,8 @@ public class DetalleCuestionarioServiceImpl implements DetalleCuestionarioServic
 
     @Override
     @Transactional(readOnly = true)
-    public Set<DetalleCuestionario> findAll() {
-        return (Set<DetalleCuestionario>) detallecuestionariodao.findAll();
+    public List<DetalleCuestionario> findAll() {
+        return (List<DetalleCuestionario>) detallecuestionariodao.findAll();
     }
 
     @Override
@@ -30,8 +31,8 @@ public class DetalleCuestionarioServiceImpl implements DetalleCuestionarioServic
 
     @Override
     @Transactional(readOnly = false)
-    public DetalleCuestionario save(DetalleCuestionario pregunta) {
-        return detallecuestionariodao.save(pregunta);
+    public DetalleCuestionario save(DetalleCuestionario detalleCuestionario) {
+        return detallecuestionariodao.save(detalleCuestionario);
     }
 
     @Override

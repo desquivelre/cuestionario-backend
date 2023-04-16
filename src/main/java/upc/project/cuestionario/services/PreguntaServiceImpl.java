@@ -1,5 +1,6 @@
 package upc.project.cuestionario.services;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class PreguntaServiceImpl implements PreguntaService{
 
     @Override
     @Transactional(readOnly = true)
-    public Set<Pregunta> findAll() {
-        return (Set<Pregunta>) preguntadao.findAll();
+    public List<Pregunta> findAll() {
+        return (List<Pregunta>) preguntadao.findAll();
     }
 
     @Override

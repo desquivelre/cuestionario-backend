@@ -27,6 +27,18 @@ public class DetalleCuestionario {
     @JoinColumn(name="crespuestamil")
     private RespuestaMIL respuestamil;
 
+
+    public DetalleCuestionario() {}
+
+    public DetalleCuestionario(DetalleCuestionarioKey id, Usuario usuario, Cuestionario cuestionario, Pregunta pregunta,
+            RespuestaMIL respuestamil) {
+        this.id = id;
+        this.usuario = usuario;
+        this.cuestionario = cuestionario;
+        this.pregunta = pregunta;
+        this.respuestamil = respuestamil;
+    }
+
     public DetalleCuestionarioKey getId() {
         return id;
     }

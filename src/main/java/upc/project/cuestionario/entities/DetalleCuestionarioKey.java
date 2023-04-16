@@ -50,4 +50,29 @@ public class DetalleCuestionarioKey implements Serializable{
         return true;
     }
 
+    public Long getCusuario() {
+        return cusuario;
+    }
+
+    public void setCusuario(Long cusuario) {
+        this.cusuario = cusuario;
+    }
+
+    public Long getCcuestionario() {
+        return ccuestionario;
+    }
+
+    public void setCcuestionario(Long ccuestionario) {
+        this.ccuestionario = ccuestionario;
+    }
+
+    public Long getCpregunta() {
+        return cpregunta;
+    }
+
+    public void setCpregunta(Long cpregunta) {
+        this.cpregunta = cpregunta;
+    }
+
+    
 }

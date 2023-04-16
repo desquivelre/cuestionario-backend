@@ -225,3 +225,5 @@ INSERT INTO pregunta (cpregunta, csubcategoria, siglapregunta, npregunta) VALUES
 INSERT INTO pregunta (cpregunta, csubcategoria, siglapregunta, npregunta) VALUES ('36', '91', 'IR-5b', 'Se proporcionan los recursos adecuados (personas, financiación y herramientas) para apoyar las actividades en el dominio de RESPUESTA');
 INSERT INTO pregunta (cpregunta, csubcategoria, siglapregunta, npregunta) VALUES ('37', '89', 'IR-3b', 'Las respuestas a los incidentes de ciberseguridad se ejecutan, al menos de manera ad hoc, para limitar el impacto en la función y restaurar las operaciones normales');
 
+/* Tabla DetalleCuestionario */
+-- INSERT INTO detalle_cuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES ('1', '4', '1','3');
