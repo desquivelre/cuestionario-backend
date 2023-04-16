@@ -1,7 +1,6 @@
 package upc.project.cuestionario.services;
 
 import java.util.List;
-import java.util.Set;
 
 import upc.project.cuestionario.entities.Pregunta;
 

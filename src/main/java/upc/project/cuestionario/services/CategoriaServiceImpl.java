@@ -1,6 +1,6 @@
 package upc.project.cuestionario.services;
 
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +17,8 @@ public class CategoriaServiceImpl implements CategoriaService {
 
     @Override
     @Transactional(readOnly = true)
-    public Set<Categoria> findAll() {
-        return (Set<Categoria>) categoriadao.findAll();
+    public List<Categoria> findAll() {
+        return (List<Categoria>) categoriadao.findAll();
     }
 
     @Override

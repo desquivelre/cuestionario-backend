@@ -1,6 +1,6 @@
 package upc.project.cuestionario.services;
 
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +17,8 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Override
     @Transactional(readOnly = true)
-    public Set<Usuario> findAll() {
-        return (Set<Usuario>) usuariodao.findAll();
+    public List<Usuario> findAll() {
+        return (List<Usuario>) usuariodao.findAll();
     }
 
     @Override

@@ -1,7 +1,7 @@
 package upc.project.cuestionario.entities;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -17,7 +17,7 @@ public class Funcion implements Serializable{
     private String siglafuncion;
 
     @OneToMany(mappedBy = "funcion")
-    private Set<Categoria> categorias;
+    private List<Categoria> categorias;
 
     public Long getCfuncion() {
         return cfuncion;
@@ -43,13 +43,15 @@ public class Funcion implements Serializable{
         this.siglafuncion = siglafuncion;
     }
 
-    public Set<Categoria> getCategorias() {
+    public List<Categoria> getCategorias() {
         return categorias;
     }
 
-    public void setCategorias(Set<Categoria> categorias) {
+    public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
     }
+
+    
 
     
 }

@@ -1,25 +1,26 @@
 package upc.project.cuestionario.entities;
 
+import java.io.Serializable;
+
 import jakarta.persistence.*;
 
 @Entity
-public class DetalleCuestionario {
+@Table(name = "detallecuestionario")
+public class DetalleCuestionario implements Serializable{
     
-    @EmbeddedId
-    private DetalleCuestionarioKey id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne
-    @MapsId("cusuario")
     @JoinColumn(name="cusuario")
     private Usuario usuario;
 
     @ManyToOne
-    @MapsId("ccuestionario")
     @JoinColumn(name="ccuestionario")
     private Cuestionario cuestionario;
 
     @ManyToOne
-    @MapsId("cpregunta")
     @JoinColumn(name="cpregunta")
     private Pregunta pregunta;
 
@@ -27,23 +28,11 @@ public class DetalleCuestionario {
     @JoinColumn(name="crespuestamil")
     private RespuestaMIL respuestamil;
 
-
-    public DetalleCuestionario() {}
-
-    public DetalleCuestionario(DetalleCuestionarioKey id, Usuario usuario, Cuestionario cuestionario, Pregunta pregunta,
-            RespuestaMIL respuestamil) {
-        this.id = id;
-        this.usuario = usuario;
-        this.cuestionario = cuestionario;
-        this.pregunta = pregunta;
-        this.respuestamil = respuestamil;
-    }
-
-    public DetalleCuestionarioKey getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(DetalleCuestionarioKey id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -79,5 +68,7 @@ public class DetalleCuestionario {
         this.respuestamil = respuestamil;
     }
 
+
+   
     
 }

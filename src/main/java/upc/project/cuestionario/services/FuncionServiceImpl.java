@@ -1,6 +1,6 @@
 package upc.project.cuestionario.services;
 
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +17,8 @@ public class FuncionServiceImpl implements FuncionService{
 
     @Override
     @Transactional(readOnly = true)
-    public Set<Funcion> findAll() {
-        return (Set<Funcion>) funciondao.findAll();
+    public List<Funcion> findAll() {
+        return (List<Funcion>) funciondao.findAll();
     }
 
     @Override

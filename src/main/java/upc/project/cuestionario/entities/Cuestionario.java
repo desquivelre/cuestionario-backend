@@ -1,7 +1,7 @@
 package upc.project.cuestionario.entities;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -15,7 +15,7 @@ public class Cuestionario implements Serializable{
     private String ncuestionario;
 
     @OneToMany(mappedBy = "cuestionario")
-    private Set<DetalleCuestionario> detallecuestionarios;
+    private List<DetalleCuestionario> detallecuestionarios;
 
     public Long getCcuestionario() {
         return ccuestionario;
@@ -33,13 +33,14 @@ public class Cuestionario implements Serializable{
         this.ncuestionario = ncuestionario;
     }
 
-    public Set<DetalleCuestionario> getDetallecuestionarios() {
+    public List<DetalleCuestionario> getDetallecuestionarios() {
         return detallecuestionarios;
     }
 
-    public void setDetallecuestionarios(Set<DetalleCuestionario> detallecuestionarios) {
+    public void setDetallecuestionarios(List<DetalleCuestionario> detallecuestionarios) {
         this.detallecuestionarios = detallecuestionarios;
     }
 
+    
     
 }

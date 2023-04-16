@@ -1,7 +1,7 @@
 package upc.project.cuestionario.entities;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -18,20 +18,12 @@ public class Pregunta implements Serializable{
     private String siglapregunta;
 
     @OneToMany(mappedBy = "pregunta")
-    private Set<DetalleCuestionario> detallecuestionarios;
+    private List<DetalleCuestionario> detallecuestionarios;
 
     @ManyToOne
     @JoinColumn(name = "csubcategoria")
     private Subcategoria subcategoria;
 
-    public Pregunta(Long cpregunta, String npregunta, String siglapregunta,
-            Set<DetalleCuestionario> detallecuestionarios, Subcategoria subcategoria) {
-        this.cpregunta = cpregunta;
-        this.npregunta = npregunta;
-        this.siglapregunta = siglapregunta;
-        this.detallecuestionarios = detallecuestionarios;
-        this.subcategoria = subcategoria;
-    }
 
     public Long getCpregunta() {
         return cpregunta;
@@ -49,14 +41,6 @@ public class Pregunta implements Serializable{
         this.npregunta = npregunta;
     }
 
-    public Set<DetalleCuestionario> getDetallecuestionarios() {
-        return detallecuestionarios;
-    }
-
-    public void setDetallecuestionarios(Set<DetalleCuestionario> detallecuestionarios) {
-        this.detallecuestionarios = detallecuestionarios;
-    }
-
     public Subcategoria getSubcategoria() {
         return subcategoria;
     }
@@ -71,5 +55,13 @@ public class Pregunta implements Serializable{
 
     public void setSiglapregunta(String siglapregunta) {
         this.siglapregunta = siglapregunta;
+    }
+
+    public List<DetalleCuestionario> getDetallecuestionarios() {
+        return detallecuestionarios;
+    }
+
+    public void setDetallecuestionarios(List<DetalleCuestionario> detallecuestionarios) {
+        this.detallecuestionarios = detallecuestionarios;
     }
 }

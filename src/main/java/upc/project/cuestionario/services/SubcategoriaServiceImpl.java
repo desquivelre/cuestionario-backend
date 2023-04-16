@@ -1,6 +1,6 @@
 package upc.project.cuestionario.services;
 
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +17,8 @@ public class SubcategoriaServiceImpl implements SubcategoriaService {
 
     @Override
     @Transactional(readOnly = true)
-    public Set<Subcategoria> findAll() {
-        return (Set<Subcategoria>) subcategoriadao.findAll();
+    public List<Subcategoria> findAll() {
+        return (List<Subcategoria>) subcategoriadao.findAll();
     }
 
     @Override

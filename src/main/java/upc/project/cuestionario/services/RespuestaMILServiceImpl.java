@@ -1,6 +1,6 @@
 package upc.project.cuestionario.services;
 
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +17,8 @@ public class RespuestaMILServiceImpl implements RespuestaMILService{
 
     @Override
     @Transactional(readOnly = true)
-    public Set<RespuestaMIL> findAll() {
-        return (Set<RespuestaMIL>) respuestamildao.findAll();
+    public List<RespuestaMIL> findAll() {
+        return (List<RespuestaMIL>) respuestamildao.findAll();
     }
 
     @Override

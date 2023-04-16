@@ -3,7 +3,6 @@ package upc.project.cuestionario.controllers;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import upc.project.cuestionario.entities.DetalleCuestionario;
-import upc.project.cuestionario.entities.DetalleCuestionarioKey;
 import upc.project.cuestionario.services.DetalleCuestionarioService;
 
 @RestController
@@ -37,16 +35,11 @@ public class CuestionarioController {
         return detalleCuestionarioService.findAll();
     }
 
-    @GetMapping("/listar-detallecuestionario/{usuario_id}/{cuestionario_id}/{pregunta_id}")
-    public ResponseEntity<?> listById(@PathVariable Long usuario_id, @PathVariable Long cuestionario_id, @PathVariable Long pregunta_id) {
+    @GetMapping("/listar-detallecuestionario/{id}")
+    public ResponseEntity<?> listById(@PathVariable Long id) {
 
         DetalleCuestionario detalleCuestionario = null;
         Map<String, Object> response = new HashMap<>();
-
-        DetalleCuestionarioKey id = new DetalleCuestionarioKey();
-        id.setCcuestionario(cuestionario_id);
-        id.setCpregunta(pregunta_id);
-        id.setCusuario(usuario_id);
 
         try {
             detalleCuestionario = detalleCuestionarioService.findById(id);
@@ -69,28 +62,26 @@ public class CuestionarioController {
         return detalleCuestionarioService.save(detalleCuestionario);
     }
 
-    @PutMapping("/detallecuestionario-update/{usuario_id}/{cuestionario_id}/{pregunta_id}")
+    @PutMapping("/detallecuestionario-update/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public DetalleCuestionario updateDetalleCuestionario(@RequestBody DetalleCuestionario detalleCuestionario, @PathVariable Long usuario_id, @PathVariable Long cuestionario_id, @PathVariable Long pregunta_id) {
+    public DetalleCuestionario updateDetalleCuestionario(@RequestBody DetalleCuestionario detalleCuestionario, @PathVariable Long id) {
        
-        DetalleCuestionarioKey id = new DetalleCuestionarioKey();
-        id.setCcuestionario(cuestionario_id);
-        id.setCpregunta(pregunta_id);
-        id.setCusuario(usuario_id);
+        // Cuestionario cuestionarioActual = cuestionarioService.findById(cuestionario_id);
+        // Usuario usuarioActual = usuarioService.findById(usuario_id);
+        // Pregunta preguntaActual = preguntaService.findById(pregunta_id);
+
+        // detalleCuestionario.setCuestionario(cuestionarioActual);
+        // detalleCuestionario.setUsuario(usuarioActual);
+        // detalleCuestionario.setPregunta(preguntaActual);
         
         DetalleCuestionario detalleCuestionarioActual = detalleCuestionarioService.findById(id);
         detalleCuestionarioActual.setRespuestamil(detalleCuestionario.getRespuestamil());
         return detalleCuestionarioService.save(detalleCuestionarioActual);
     }
 
-    @DeleteMapping("/detallecuestionario-delete/{usuario_id}/{cuestionario_id}/{pregunta_id}")
+    @DeleteMapping("/detallecuestionario-delete/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteClient(@PathVariable Long usuario_id, @PathVariable Long cuestionario_id, @PathVariable Long pregunta_id) {
-        DetalleCuestionarioKey id = new DetalleCuestionarioKey();
-        id.setCcuestionario(cuestionario_id);
-        id.setCpregunta(pregunta_id);
-        id.setCusuario(usuario_id);
-        
+    public void deleteClient(@PathVariable Long id) {
         detalleCuestionarioService.delete(id);
     }
 }
