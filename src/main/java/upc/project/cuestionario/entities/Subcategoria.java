@@ -1,7 +1,10 @@
 package upc.project.cuestionario.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
 
@@ -12,7 +15,8 @@ public class Subcategoria implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long csubcategoria;
 
-    @ManyToOne
+    @JsonIgnoreProperties({"subcategorias", "hibernateLazyInitializer", "handler"})
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ccategoria")
     private Categoria categoria;
 
@@ -21,8 +25,13 @@ public class Subcategoria implements Serializable{
     @Column(length = 400)
     private String nsubcategoria;
 
-    @OneToMany(mappedBy = "subcategoria")
+    @JsonIgnoreProperties({"subcategoria", "hibernateLazyInitializer", "handler"})
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "subcategoria", cascade = CascadeType.ALL)
     private List<Pregunta> preguntas;
+
+    public Subcategoria() {
+        this.preguntas = new ArrayList<>();
+    }
 
     public Long getCsubcategoria() {
         return csubcategoria;

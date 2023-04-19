@@ -1,7 +1,10 @@
 package upc.project.cuestionario.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
 
@@ -14,8 +17,13 @@ public class Cuestionario implements Serializable{
 
     private String ncuestionario;
 
-    @OneToMany(mappedBy = "cuestionario")
+    @JsonIgnoreProperties({"cuestionario", "hibernateLazyInitializer", "handler"})
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "cuestionario", cascade = CascadeType.ALL)
     private List<DetalleCuestionario> detallecuestionarios;
+    
+    public Cuestionario() {
+        this.detallecuestionarios = new ArrayList<>();
+    }
 
     public Long getCcuestionario() {
         return ccuestionario;

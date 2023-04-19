@@ -2,6 +2,9 @@ package upc.project.cuestionario.entities;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,20 +15,25 @@ public class DetalleCuestionario implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @JsonIgnoreProperties({"detallecuestionarios", "hibernateLazyInitializer", "handler"})
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="cusuario")
     private Usuario usuario;
 
-    @ManyToOne
+    @JsonIgnoreProperties({"detallecuestionarios", "hibernateLazyInitializer", "handler"})
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ccuestionario")
     private Cuestionario cuestionario;
 
-    @ManyToOne
+    @JsonIgnoreProperties({"detallecuestionarios", "hibernateLazyInitializer", "handler"})
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="cpregunta")
     private Pregunta pregunta;
 
-    @ManyToOne
+    @JsonIgnoreProperties({"detallecuestionarios", "hibernateLazyInitializer", "handler"})
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="crespuestamil")
+    @Nullable
     private RespuestaMIL respuestamil;
 
     public Long getId() {

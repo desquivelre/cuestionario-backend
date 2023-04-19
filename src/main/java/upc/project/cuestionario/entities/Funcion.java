@@ -1,7 +1,10 @@
 package upc.project.cuestionario.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
 
@@ -16,8 +19,13 @@ public class Funcion implements Serializable{
 
     private String siglafuncion;
 
-    @OneToMany(mappedBy = "funcion")
+    @JsonIgnoreProperties({"funcion", "hibernateLazyInitializer", "handler"})
+    @OneToMany(fetch = FetchType.LAZY ,mappedBy = "funcion", cascade = CascadeType.ALL)
     private List<Categoria> categorias;
+
+    public Funcion() {
+        this.categorias = new ArrayList<>();
+    }
 
     public Long getCfuncion() {
         return cfuncion;

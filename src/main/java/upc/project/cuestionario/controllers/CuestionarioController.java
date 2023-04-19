@@ -20,15 +20,35 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import upc.project.cuestionario.entities.DetalleCuestionario;
+import upc.project.cuestionario.entities.Pregunta;
+import upc.project.cuestionario.entities.RespuestaMIL;
 import upc.project.cuestionario.services.DetalleCuestionarioService;
+import upc.project.cuestionario.services.PreguntaService;
+import upc.project.cuestionario.services.RespuestaMILService;
 
 @RestController
-// @CrossOrigin(origins = {"*"})
+@CrossOrigin(origins = {"http://localhost:4200"})
 @RequestMapping("/api")
 public class CuestionarioController {
     
     @Autowired
     private DetalleCuestionarioService detalleCuestionarioService;
+
+    @Autowired
+    private PreguntaService preguntaService;
+
+    @Autowired
+    private RespuestaMILService respuestaMILService;
+    
+    @GetMapping("/listar-preguntas")
+    public List<Pregunta> list_preguntas() {
+        return preguntaService.findAll();
+    }
+
+    @GetMapping("/listar-respuestas")
+    public List<RespuestaMIL> list_respuestas() {
+        return respuestaMILService.findAll();
+    }
 
     @GetMapping("/listar-detallecuestionarios")
     public List<DetalleCuestionario> list_detallecuestionario() {

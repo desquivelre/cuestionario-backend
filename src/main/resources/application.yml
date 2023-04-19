@@ -1,13 +1,20 @@
 server:
   port: 8080
-  #address: 192.168.73.215
 spring:
   jpa:
     database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     hibernate:
       ddl-auto: create-drop
   datasource:
-    url: jdbc:postgresql://localhost:5432/db_springboot_backend
+    url: jdbc:postgresql://localhost:5432/db_springboot_backend?useSSL=false
     username: postgres
     password: deg159753
+    driver-class-name: org.postgresql.Driver
+logging:
+    level: 
+      org:
+        hibernate:
+          sql: debug
+  

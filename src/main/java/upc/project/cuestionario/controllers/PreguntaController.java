@@ -3,15 +3,14 @@ package upc.project.cuestionario.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import upc.project.cuestionario.entities.Pregunta;
 import upc.project.cuestionario.services.PreguntaService;
+import org.springframework.http.HttpStatus;
 
-@RestController
 // @CrossOrigin(origins = {"*"})
+@RestController
 @RequestMapping("/pregunta")
 public class PreguntaController {
     
@@ -19,7 +18,13 @@ public class PreguntaController {
     private PreguntaService preguntaService;
     
     @GetMapping("/listar-preguntas")
-    public List<Pregunta> list_detallecuestionario() {
+    public List<Pregunta> list_preguntas() {
         return preguntaService.findAll();
+    }
+
+    @PostMapping("/pregunta-save")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Pregunta crearDetalleCuestionario(@RequestBody Pregunta pregunta) {
+        return preguntaService.save(pregunta);
     }
 }
