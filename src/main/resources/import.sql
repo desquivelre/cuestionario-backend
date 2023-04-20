@@ -226,7 +226,7 @@ INSERT INTO pregunta (csubcategoria, siglapregunta, npregunta) VALUES (91, 'IR-5
 INSERT INTO pregunta (csubcategoria, siglapregunta, npregunta) VALUES (89, 'IR-3b', 'Las respuestas a los incidentes de ciberseguridad se ejecutan, al menos de manera ad hoc, para limitar el impacto en la función y restaurar las operaciones normales');
 
 /* Tabla DetalleCuestionario */
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 1, 1, 2);
+INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 1, 1, 1);
 INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 2, 1, 1);
 INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 3, 1, 1);
 INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 4, 1, 1);

@@ -82,9 +82,9 @@ public class CuestionarioController {
         return detalleCuestionarioService.save(detalleCuestionario);
     }
 
-    @PutMapping("/detallecuestionario-update/{id}")
+    @PutMapping("/detallecuestionario-update/{id}/{respuesta}")
     @ResponseStatus(HttpStatus.CREATED)
-    public DetalleCuestionario updateDetalleCuestionario(@RequestBody DetalleCuestionario detalleCuestionario, @PathVariable Long id) {
+    public DetalleCuestionario updateDetalleCuestionario(@RequestBody DetalleCuestionario detalleCuestionario, @PathVariable Long id,  @PathVariable Long respuesta) {
        
         // Cuestionario cuestionarioActual = cuestionarioService.findById(cuestionario_id);
         // Usuario usuarioActual = usuarioService.findById(usuario_id);
@@ -95,7 +95,12 @@ public class CuestionarioController {
         // detalleCuestionario.setPregunta(preguntaActual);
         
         DetalleCuestionario detalleCuestionarioActual = detalleCuestionarioService.findById(id);
-        detalleCuestionarioActual.setRespuestamil(detalleCuestionario.getRespuestamil());
+        // detalleCuestionarioActual.setRespuestamil(detalleCuestionario.getRespuestamil());
+
+        RespuestaMIL nuevarespuesta = new RespuestaMIL();
+        nuevarespuesta = respuestaMILService.findById(respuesta);
+
+        detalleCuestionarioActual.setRespuestamil(nuevarespuesta);
         return detalleCuestionarioService.save(detalleCuestionarioActual);
     }
 
