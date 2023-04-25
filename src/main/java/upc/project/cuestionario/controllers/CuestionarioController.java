@@ -19,12 +19,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import upc.project.cuestionario.entities.Cuestionario;
 import upc.project.cuestionario.entities.DetalleCuestionario;
 import upc.project.cuestionario.entities.Pregunta;
 import upc.project.cuestionario.entities.RespuestaMIL;
+import upc.project.cuestionario.entities.Usuario;
+import upc.project.cuestionario.services.CuestionarioService;
 import upc.project.cuestionario.services.DetalleCuestionarioService;
 import upc.project.cuestionario.services.PreguntaService;
 import upc.project.cuestionario.services.RespuestaMILService;
+import upc.project.cuestionario.services.UsuarioService;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200"})
@@ -39,6 +43,17 @@ public class CuestionarioController {
 
     @Autowired
     private RespuestaMILService respuestaMILService;
+
+    @Autowired
+    private UsuarioService usuarioService;
+
+    @Autowired
+    private CuestionarioService cuestionarioService;
+
+    @GetMapping("/listar-usuarios")
+    public List<Usuario> list_usuarios() {
+        return usuarioService.findAll();
+    }
     
     @GetMapping("/listar-preguntas")
     public List<Pregunta> list_preguntas() {
@@ -76,10 +91,23 @@ public class CuestionarioController {
         return new ResponseEntity<DetalleCuestionario>(detalleCuestionario, HttpStatus.OK);
     }
 
-    @PostMapping("/detallecuestionario-save")
+    @PostMapping("/detallecuestionario-save/{cusuario}/{ccuestionario}/{cpregunta}/{crespuesta}")
     @ResponseStatus(HttpStatus.CREATED)
-    public DetalleCuestionario crearDetalleCuestionario(@RequestBody DetalleCuestionario detalleCuestionario) {
-        return detalleCuestionarioService.save(detalleCuestionario);
+    public DetalleCuestionario crearDetalleCuestionario(@PathVariable Long cusuario, @PathVariable Long ccuestionario, @PathVariable Long cpregunta, @PathVariable Long crespuesta) {
+       
+        DetalleCuestionario detalleCuestionarioNuevo = new DetalleCuestionario();
+
+        Usuario usuariotemp = usuarioService.findById(cusuario);
+        Cuestionario cuestionatiotemp = cuestionarioService.findById(ccuestionario);
+        Pregunta preguntatemp = preguntaService.findById(cpregunta);
+        RespuestaMIL respuestamiltemp = respuestaMILService.findById(crespuesta);
+
+        detalleCuestionarioNuevo.setUsuario(usuariotemp);
+        detalleCuestionarioNuevo.setCuestionario(cuestionatiotemp);
+        detalleCuestionarioNuevo.setPregunta(preguntatemp);
+        detalleCuestionarioNuevo.setRespuestamil(respuestamiltemp);
+
+        return detalleCuestionarioService.save(detalleCuestionarioNuevo);
     }
 
     @PutMapping("/detallecuestionario-update/{id}/{respuesta}")

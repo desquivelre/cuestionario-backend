@@ -1,17 +1,17 @@
 /* Tabla Usuario */
-INSERT INTO usuario (cusuario, nusuario) VALUES (1, 'administrador');
-INSERT INTO usuario (cusuario, nusuario) VALUES (2, 'empresa1');
-INSERT INTO usuario (cusuario, nusuario) VALUES (3, 'empresa2');
+INSERT INTO usuario (cusuario, nusuario, contrasena) VALUES (1, 'administrador', 'administrador++');
+INSERT INTO usuario (cusuario, nusuario, contrasena) VALUES (2, 'empresa1', 'empresa1++');
+INSERT INTO usuario (cusuario, nusuario, contrasena) VALUES (3, 'empresa2', 'empresa2++');
 
 /* Tabla Cuestionario */
 INSERT INTO cuestionario (ncuestionario) VALUES ('Cuestionario NIST CSF - C2M2 Maturity Model');
 
 /* Tabla RespuestaMIL */
-INSERT INTO respuestamil (crespuestamil, nrespuestamil) VALUES (1, 'Falta asignar');
-INSERT INTO respuestamil (crespuestamil, nrespuestamil) VALUES (2, 'MIL 0');
-INSERT INTO respuestamil (crespuestamil, nrespuestamil) VALUES (3, 'MIL 1');
-INSERT INTO respuestamil (crespuestamil, nrespuestamil) VALUES (4, 'MIL 2');
-INSERT INTO respuestamil (crespuestamil, nrespuestamil) VALUES (5, 'MIL 3');
+INSERT INTO respuestamil (crespuestamil, nrespuestamil) VALUES (1, 'No se ha implementado');
+INSERT INTO respuestamil (crespuestamil, nrespuestamil) VALUES (2, 'Implementado parcialmente');
+INSERT INTO respuestamil (crespuestamil, nrespuestamil) VALUES (3, 'Implementado en gran medida');
+INSERT INTO respuestamil (crespuestamil, nrespuestamil) VALUES (4, 'Totalmente implementado');
+-- INSERT INTO respuestamil (crespuestamil, nrespuestamil) VALUES (5, 'MIL 3');
 
 /* Tabla Funcion */
 INSERT INTO funcion (cfuncion, siglafuncion,nfuncion) VALUES (1, 'ID','Identificar');
@@ -226,43 +226,43 @@ INSERT INTO pregunta (csubcategoria, siglapregunta, npregunta) VALUES (91, 'IR-5
 INSERT INTO pregunta (csubcategoria, siglapregunta, npregunta) VALUES (89, 'IR-3b', 'Las respuestas a los incidentes de ciberseguridad se ejecutan, al menos de manera ad hoc, para limitar el impacto en la función y restaurar las operaciones normales');
 
 /* Tabla DetalleCuestionario */
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 1, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 2, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 3, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 4, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 5, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 6, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 7, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 8, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 9, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 10, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 11, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 12, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 13, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 14, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 15, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 16, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 17, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 18, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 19, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 20, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 21, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 22, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 23, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 24, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 25, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 26, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 27, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 28, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 29, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 30, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 31, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 32, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 33, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 34, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 35, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 36, 1, 1);
-INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 37, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 1, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 2, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 3, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 4, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 5, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 6, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 7, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 8, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 9, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 10, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 11, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 12, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 13, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 14, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 15, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 16, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 17, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 18, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 19, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 20, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 21, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 22, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 23, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 24, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 25, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 26, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 27, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 28, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 29, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 30, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 31, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 32, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 33, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 34, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 35, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 36, 1, 1);
+-- INSERT INTO detallecuestionario (ccuestionario, cpregunta, cusuario, crespuestamil) VALUES (1, 37, 1, 1);
 
 
 

@@ -16,6 +16,8 @@ public class Usuario implements Serializable{
     private Long cusuario;
 
     private String nusuario;
+
+    private String contrasena;
     
     @JsonIgnoreProperties({"usuario", "hibernateLazyInitializer", "handler"})
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -47,6 +49,14 @@ public class Usuario implements Serializable{
 
     public void setDetallecuestionarios(List<DetalleCuestionario> detallecuestionarios) {
         this.detallecuestionarios = detallecuestionarios;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
   
