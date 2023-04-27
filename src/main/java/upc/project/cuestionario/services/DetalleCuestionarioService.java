@@ -9,4 +9,5 @@ public interface DetalleCuestionarioService {
     public DetalleCuestionario findById(Long id);
     public DetalleCuestionario save(DetalleCuestionario detallecuestionario);
     public void delete(Long id);
+    public List<DetalleCuestionario> listardetallecuestionario(Long ccuestionario, Long cusuario);
 }

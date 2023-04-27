@@ -65,7 +65,12 @@ public class CuestionarioController {
         return respuestaMILService.findAll();
     }
 
-    @GetMapping("/listar-detallecuestionarios")
+    @GetMapping("/listar-detallecuestionarios/{ccuestionario}/{cusuario}")
+    public List<DetalleCuestionario> list_detallecuestionarioespecifico(@PathVariable Long ccuestionario, @PathVariable Long cusuario) {
+        return detalleCuestionarioService.listardetallecuestionario(ccuestionario, cusuario);
+    }
+
+    @GetMapping("/listar-detallecuestionarios/")
     public List<DetalleCuestionario> list_detallecuestionario() {
         return detalleCuestionarioService.findAll();
     }

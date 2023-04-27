@@ -16,6 +16,12 @@ public class DetalleCuestionarioServiceImpl implements DetalleCuestionarioServic
     private DetalleCuestionarioDAO detallecuestionariodao;
 
     @Override
+    @Transactional(readOnly = false)
+    public List<DetalleCuestionario> listardetallecuestionario(Long ccuestionario, Long cusuario) {
+        return (List<DetalleCuestionario>) detallecuestionariodao.listardetallecuestionario(ccuestionario, cusuario);
+    }
+    
+    @Override
     @Transactional(readOnly = true)
     public List<DetalleCuestionario> findAll() {
         return (List<DetalleCuestionario>) detallecuestionariodao.findAll();
