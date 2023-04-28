@@ -20,6 +20,8 @@ public class Pregunta implements Serializable{
 
     private String siglapregunta;
 
+    private String preguntamil;
+
     @JsonIgnoreProperties({"pregunta", "hibernateLazyInitializer", "handler"})
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pregunta", cascade = CascadeType.ALL)
     private List<DetalleCuestionario> detallecuestionarios;
@@ -33,6 +35,7 @@ public class Pregunta implements Serializable{
         this.detallecuestionarios = new ArrayList<>();
     }
 
+    
     public Long getCpregunta() {
         return cpregunta;
     }
@@ -71,5 +74,13 @@ public class Pregunta implements Serializable{
 
     public void setDetallecuestionarios(List<DetalleCuestionario> detallecuestionarios) {
         this.detallecuestionarios = detallecuestionarios;
+    }
+
+    public String getPreguntamil() {
+        return preguntamil;
+    }
+
+    public void setPreguntaMIL(String preguntaMIL) {
+        this.preguntamil = preguntaMIL;
     }
 }
