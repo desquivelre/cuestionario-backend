@@ -23,12 +23,15 @@ import upc.project.cuestionario.entities.Cuestionario;
 import upc.project.cuestionario.entities.DetalleCuestionario;
 import upc.project.cuestionario.entities.Pregunta;
 import upc.project.cuestionario.entities.RespuestaMIL;
+import upc.project.cuestionario.entities.Subcategoria;
 import upc.project.cuestionario.entities.Usuario;
 import upc.project.cuestionario.services.CuestionarioService;
 import upc.project.cuestionario.services.DetalleCuestionarioService;
 import upc.project.cuestionario.services.PreguntaService;
 import upc.project.cuestionario.services.RespuestaMILService;
 import upc.project.cuestionario.services.UsuarioService;
+
+import upc.project.cuestionario.services.SubcategoriaService;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200"})
@@ -49,6 +52,15 @@ public class CuestionarioController {
 
     @Autowired
     private CuestionarioService cuestionarioService;
+
+    @Autowired
+    private SubcategoriaService subcategoriaService;
+
+
+    @GetMapping("/listar-subcategorias")
+    public List<Subcategoria> list_subcategorias() {
+        return subcategoriaService.findAll();
+    }
 
     @GetMapping("/listar-usuarios")
     public List<Usuario> list_usuarios() {
