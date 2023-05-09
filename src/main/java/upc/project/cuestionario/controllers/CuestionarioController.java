@@ -129,7 +129,7 @@ public class CuestionarioController {
 
     @PutMapping("/detallecuestionario-update/{id}/{respuesta}")
     @ResponseStatus(HttpStatus.CREATED)
-    public DetalleCuestionario updateDetalleCuestionario(@RequestBody DetalleCuestionario detalleCuestionario, @PathVariable Long id,  @PathVariable Long respuesta) {
+    public DetalleCuestionario updateDetalleCuestionario(@PathVariable Long id,  @PathVariable Long respuesta) {
        
         // Cuestionario cuestionarioActual = cuestionarioService.findById(cuestionario_id);
         // Usuario usuarioActual = usuarioService.findById(usuario_id);
