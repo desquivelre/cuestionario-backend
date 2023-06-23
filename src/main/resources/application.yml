@@ -1,20 +1,21 @@
-# server:
-#   port: 8080
+runtime: java11
+instance_class: F2
 spring:
+  # cloud:
+  #   gcp:
+  #     credentials:
+  #       location: file:src/main/resources/key.json
+  #     sql:
+  #       database-name: db_springboot_backend
+  #       instace-connection-name: springgcp-386623:us-central1:springbase2
   jpa:
-    database: POSTGRESQL
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
+    # show-sql: true
+    database: mysql
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
   datasource:
-    url: jdbc:postgresql://localhost:5432/db_springboot_backend?useSSL=false
-    username: postgres
+    url: jdbc:mysql://35.247.254.250:3306/db_springboot_backend
+    username: root
     password: deg159753
-    driver-class-name: org.postgresql.Driver
-logging:
-    level: 
-      org:
-        hibernate:
-          sql: debug
+    driver-class-name: com.mysql.cj.jdbc.Driver
   

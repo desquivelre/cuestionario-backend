@@ -33,8 +33,8 @@ import upc.project.cuestionario.services.UsuarioService;
 
 import upc.project.cuestionario.services.SubcategoriaService;
 
+@CrossOrigin(origins = {"*"})
 @RestController
-@CrossOrigin(origins = {"http://localhost:4200", "*"})
 @RequestMapping("/api")
 public class CuestionarioController {
     
